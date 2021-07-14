@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import CounterPage from "./counter/CounterPage";
+import JokePage from "./joke/JokePage";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        {/* Nav bar */}
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/joke">Joke</Link>
+            </li>
+            <li>
+              <Link to="/count">Counter</Link>
+            </li>
+          </ul>
+        </nav>
+        {/* Component switcher */}
+        <Switch>
+          <Route path="/count">
+            <CounterPage />
+          </Route>
+          <Route path="/joke">
+            <JokePage />
+          </Route>
+          <Route path="/">
+            <div>Home</div>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
