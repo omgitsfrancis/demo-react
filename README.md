@@ -4,7 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 Clone Repo
-Install deps: npm install
+
+Install deps: `npm install`
 
 ## Run
-npm start
+`npm start`
